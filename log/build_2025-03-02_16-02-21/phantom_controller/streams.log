@@ -1,0 +1,24 @@
+[1.566s] Invoking command in '/home/luisen/Documents/Universidad/Robotica/proyect_ws/src/phantom_controller': PYTHONPATH=/home/luisen/Documents/Universidad/Robotica/proyect_ws/build/phantom_controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/luisen/Documents/Universidad/Robotica/proyect_ws/install/phantom_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/phantom_controller build --build-base /home/luisen/Documents/Universidad/Robotica/proyect_ws/build/phantom_controller/build install --record /home/luisen/Documents/Universidad/Robotica/proyect_ws/build/phantom_controller/install.log --single-version-externally-managed install_data
+[1.911s] running egg_info
+[1.912s] writing ../../build/phantom_controller/phantom_controller.egg-info/PKG-INFO
+[1.913s] writing dependency_links to ../../build/phantom_controller/phantom_controller.egg-info/dependency_links.txt
+[1.913s] writing entry points to ../../build/phantom_controller/phantom_controller.egg-info/entry_points.txt
+[1.913s] writing requirements to ../../build/phantom_controller/phantom_controller.egg-info/requires.txt
+[1.914s] writing top-level names to ../../build/phantom_controller/phantom_controller.egg-info/top_level.txt
+[1.915s] reading manifest file '../../build/phantom_controller/phantom_controller.egg-info/SOURCES.txt'
+[1.917s] writing manifest file '../../build/phantom_controller/phantom_controller.egg-info/SOURCES.txt'
+[1.918s] running build
+[1.919s] running build_py
+[1.919s] copying phantom_controller/PhantomController.py -> /home/luisen/Documents/Universidad/Robotica/proyect_ws/build/phantom_controller/build/lib/phantom_controller
+[1.920s] running install
+[1.920s] running install_lib
+[1.920s] copying /home/luisen/Documents/Universidad/Robotica/proyect_ws/build/phantom_controller/build/lib/phantom_controller/PhantomController.py -> /home/luisen/Documents/Universidad/Robotica/proyect_ws/install/phantom_controller/lib/python3.10/site-packages/phantom_controller
+[1.921s] byte-compiling /home/luisen/Documents/Universidad/Robotica/proyect_ws/install/phantom_controller/lib/python3.10/site-packages/phantom_controller/PhantomController.py to PhantomController.cpython-310.pyc
+[1.923s] running install_data
+[1.923s] running install_egg_info
+[1.925s] removing '/home/luisen/Documents/Universidad/Robotica/proyect_ws/install/phantom_controller/lib/python3.10/site-packages/phantom_controller-0.0.0-py3.10.egg-info' (and everything under it)
+[1.926s] Copying ../../build/phantom_controller/phantom_controller.egg-info to /home/luisen/Documents/Universidad/Robotica/proyect_ws/install/phantom_controller/lib/python3.10/site-packages/phantom_controller-0.0.0-py3.10.egg-info
+[1.927s] running install_scripts
+[1.959s] Installing phantom_controller script to /home/luisen/Documents/Universidad/Robotica/proyect_ws/install/phantom_controller/lib/phantom_controller
+[1.960s] writing list of installed files to '/home/luisen/Documents/Universidad/Robotica/proyect_ws/build/phantom_controller/install.log'
+[2.007s] Invoked command in '/home/luisen/Documents/Universidad/Robotica/proyect_ws/src/phantom_controller' returned '0': PYTHONPATH=/home/luisen/Documents/Universidad/Robotica/proyect_ws/build/phantom_controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/luisen/Documents/Universidad/Robotica/proyect_ws/install/phantom_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/phantom_controller build --build-base /home/luisen/Documents/Universidad/Robotica/proyect_ws/build/phantom_controller/build install --record /home/luisen/Documents/Universidad/Robotica/proyect_ws/build/phantom_controller/install.log --single-version-externally-managed install_data

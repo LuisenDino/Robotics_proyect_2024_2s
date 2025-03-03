@@ -1,0 +1,35 @@
+running egg_info
+creating ../../build/phantom_controller/phantom_controller.egg-info
+writing ../../build/phantom_controller/phantom_controller.egg-info/PKG-INFO
+writing dependency_links to ../../build/phantom_controller/phantom_controller.egg-info/dependency_links.txt
+writing entry points to ../../build/phantom_controller/phantom_controller.egg-info/entry_points.txt
+writing requirements to ../../build/phantom_controller/phantom_controller.egg-info/requires.txt
+writing top-level names to ../../build/phantom_controller/phantom_controller.egg-info/top_level.txt
+writing manifest file '../../build/phantom_controller/phantom_controller.egg-info/SOURCES.txt'
+reading manifest file '../../build/phantom_controller/phantom_controller.egg-info/SOURCES.txt'
+writing manifest file '../../build/phantom_controller/phantom_controller.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/luisen/Documents/Universidad/Robotica/proyect_ws/build/phantom_controller/build
+creating /home/luisen/Documents/Universidad/Robotica/proyect_ws/build/phantom_controller/build/lib
+creating /home/luisen/Documents/Universidad/Robotica/proyect_ws/build/phantom_controller/build/lib/phantom_controller
+copying phantom_controller/PhantomController.py -> /home/luisen/Documents/Universidad/Robotica/proyect_ws/build/phantom_controller/build/lib/phantom_controller
+copying phantom_controller/__init__.py -> /home/luisen/Documents/Universidad/Robotica/proyect_ws/build/phantom_controller/build/lib/phantom_controller
+running install
+running install_lib
+creating /home/luisen/Documents/Universidad/Robotica/proyect_ws/install/phantom_controller/lib/python3.10/site-packages/phantom_controller
+copying /home/luisen/Documents/Universidad/Robotica/proyect_ws/build/phantom_controller/build/lib/phantom_controller/PhantomController.py -> /home/luisen/Documents/Universidad/Robotica/proyect_ws/install/phantom_controller/lib/python3.10/site-packages/phantom_controller
+copying /home/luisen/Documents/Universidad/Robotica/proyect_ws/build/phantom_controller/build/lib/phantom_controller/__init__.py -> /home/luisen/Documents/Universidad/Robotica/proyect_ws/install/phantom_controller/lib/python3.10/site-packages/phantom_controller
+byte-compiling /home/luisen/Documents/Universidad/Robotica/proyect_ws/install/phantom_controller/lib/python3.10/site-packages/phantom_controller/PhantomController.py to PhantomController.cpython-310.pyc
+byte-compiling /home/luisen/Documents/Universidad/Robotica/proyect_ws/install/phantom_controller/lib/python3.10/site-packages/phantom_controller/__init__.py to __init__.cpython-310.pyc
+running install_data
+creating /home/luisen/Documents/Universidad/Robotica/proyect_ws/install/phantom_controller/share/ament_index
+creating /home/luisen/Documents/Universidad/Robotica/proyect_ws/install/phantom_controller/share/ament_index/resource_index
+creating /home/luisen/Documents/Universidad/Robotica/proyect_ws/install/phantom_controller/share/ament_index/resource_index/packages
+copying resource/phantom_controller -> /home/luisen/Documents/Universidad/Robotica/proyect_ws/install/phantom_controller/share/ament_index/resource_index/packages
+copying package.xml -> /home/luisen/Documents/Universidad/Robotica/proyect_ws/install/phantom_controller/share/phantom_controller
+running install_egg_info
+Copying ../../build/phantom_controller/phantom_controller.egg-info to /home/luisen/Documents/Universidad/Robotica/proyect_ws/install/phantom_controller/lib/python3.10/site-packages/phantom_controller-0.0.0-py3.10.egg-info
+running install_scripts
+Installing phantom_controller script to /home/luisen/Documents/Universidad/Robotica/proyect_ws/install/phantom_controller/lib/phantom_controller
+writing list of installed files to '/home/luisen/Documents/Universidad/Robotica/proyect_ws/build/phantom_controller/install.log'

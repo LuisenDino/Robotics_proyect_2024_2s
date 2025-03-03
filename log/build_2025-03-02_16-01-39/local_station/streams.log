@@ -1,0 +1,20 @@
+[1.901s] Invoking command in '/home/luisen/Documents/Universidad/Robotica/proyect_ws/local_station': PYTHONPATH=/home/luisen/Documents/Universidad/Robotica/proyect_ws/build/local_station/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/luisen/Documents/Universidad/Robotica/proyect_ws/install/local_station/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/local_station build --build-base /home/luisen/Documents/Universidad/Robotica/proyect_ws/build/local_station/build install --record /home/luisen/Documents/Universidad/Robotica/proyect_ws/build/local_station/install.log --single-version-externally-managed install_data
+[2.294s] running egg_info
+[2.295s] writing ../build/local_station/local_station.egg-info/PKG-INFO
+[2.295s] writing dependency_links to ../build/local_station/local_station.egg-info/dependency_links.txt
+[2.295s] writing entry points to ../build/local_station/local_station.egg-info/entry_points.txt
+[2.295s] writing requirements to ../build/local_station/local_station.egg-info/requires.txt
+[2.296s] writing top-level names to ../build/local_station/local_station.egg-info/top_level.txt
+[2.298s] reading manifest file '../build/local_station/local_station.egg-info/SOURCES.txt'
+[2.310s] writing manifest file '../build/local_station/local_station.egg-info/SOURCES.txt'
+[2.311s] running build
+[2.311s] running build_py
+[2.311s] running install
+[2.312s] running install_lib
+[2.313s] running install_data
+[2.314s] running install_egg_info
+[2.315s] removing '/home/luisen/Documents/Universidad/Robotica/proyect_ws/install/local_station/lib/python3.10/site-packages/local_station-0.0.0-py3.10.egg-info' (and everything under it)
+[2.316s] Copying ../build/local_station/local_station.egg-info to /home/luisen/Documents/Universidad/Robotica/proyect_ws/install/local_station/lib/python3.10/site-packages/local_station-0.0.0-py3.10.egg-info
+[2.317s] running install_scripts
+[2.358s] writing list of installed files to '/home/luisen/Documents/Universidad/Robotica/proyect_ws/build/local_station/install.log'
+[2.403s] Invoked command in '/home/luisen/Documents/Universidad/Robotica/proyect_ws/local_station' returned '0': PYTHONPATH=/home/luisen/Documents/Universidad/Robotica/proyect_ws/build/local_station/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/luisen/Documents/Universidad/Robotica/proyect_ws/install/local_station/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/local_station build --build-base /home/luisen/Documents/Universidad/Robotica/proyect_ws/build/local_station/build install --record /home/luisen/Documents/Universidad/Robotica/proyect_ws/build/local_station/install.log --single-version-externally-managed install_data

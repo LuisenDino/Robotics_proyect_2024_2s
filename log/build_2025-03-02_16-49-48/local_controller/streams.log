@@ -1,0 +1,21 @@
+[2.140s] Invoking command in '/home/luisen/Documents/Universidad/Robotica/proyect_ws/src/local_controller': PYTHONPATH=/home/luisen/Documents/Universidad/Robotica/proyect_ws/build/local_controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/luisen/Documents/Universidad/Robotica/proyect_ws/install/local_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/local_controller build --build-base /home/luisen/Documents/Universidad/Robotica/proyect_ws/build/local_controller/build install --record /home/luisen/Documents/Universidad/Robotica/proyect_ws/build/local_controller/install.log --single-version-externally-managed install_data
+[2.514s] running egg_info
+[2.514s] writing ../../build/local_controller/local_controller.egg-info/PKG-INFO
+[2.514s] writing dependency_links to ../../build/local_controller/local_controller.egg-info/dependency_links.txt
+[2.514s] writing entry points to ../../build/local_controller/local_controller.egg-info/entry_points.txt
+[2.515s] writing requirements to ../../build/local_controller/local_controller.egg-info/requires.txt
+[2.515s] writing top-level names to ../../build/local_controller/local_controller.egg-info/top_level.txt
+[2.517s] reading manifest file '../../build/local_controller/local_controller.egg-info/SOURCES.txt'
+[2.524s] writing manifest file '../../build/local_controller/local_controller.egg-info/SOURCES.txt'
+[2.525s] running build
+[2.525s] running build_py
+[2.527s] running install
+[2.527s] running install_lib
+[2.527s] running install_data
+[2.527s] running install_egg_info
+[2.530s] removing '/home/luisen/Documents/Universidad/Robotica/proyect_ws/install/local_controller/lib/python3.10/site-packages/local_controller-1.0.0-py3.10.egg-info' (and everything under it)
+[2.530s] Copying ../../build/local_controller/local_controller.egg-info to /home/luisen/Documents/Universidad/Robotica/proyect_ws/install/local_controller/lib/python3.10/site-packages/local_controller-1.0.0-py3.10.egg-info
+[2.531s] running install_scripts
+[2.558s] Installing local_controller script to /home/luisen/Documents/Universidad/Robotica/proyect_ws/install/local_controller/lib/local_controller
+[2.558s] writing list of installed files to '/home/luisen/Documents/Universidad/Robotica/proyect_ws/build/local_controller/install.log'
+[2.586s] Invoked command in '/home/luisen/Documents/Universidad/Robotica/proyect_ws/src/local_controller' returned '0': PYTHONPATH=/home/luisen/Documents/Universidad/Robotica/proyect_ws/build/local_controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/luisen/Documents/Universidad/Robotica/proyect_ws/install/local_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/local_controller build --build-base /home/luisen/Documents/Universidad/Robotica/proyect_ws/build/local_controller/build install --record /home/luisen/Documents/Universidad/Robotica/proyect_ws/build/local_controller/install.log --single-version-externally-managed install_data

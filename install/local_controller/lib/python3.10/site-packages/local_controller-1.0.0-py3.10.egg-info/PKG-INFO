@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: local-controller
+Version: 1.0.0
+Summary: Este paquete permite leer la información de un joystic de PS5 y envía datos de movimiento, modo y status. Tiene una GUI para mostrar información del robot
+Home-page: UNKNOWN
+Maintainer: Luis Enrique Carmona
+Maintainer-email: lucarmonaa@unal.edu.co
+License: MIT license
+Platform: UNKNOWN
+
+UNKNOWN
+

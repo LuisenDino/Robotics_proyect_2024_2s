@@ -1,0 +1,24 @@
+[1.827s] Invoking command in '/home/luisen/Documents/Universidad/Robotica/proyect_ws/src/phantom_controller': PYTHONPATH=/home/luisen/Documents/Universidad/Robotica/proyect_ws/build/phantom_controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/luisen/Documents/Universidad/Robotica/proyect_ws/install/phantom_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/phantom_controller build --build-base /home/luisen/Documents/Universidad/Robotica/proyect_ws/build/phantom_controller/build install --record /home/luisen/Documents/Universidad/Robotica/proyect_ws/build/phantom_controller/install.log --single-version-externally-managed install_data
+[2.213s] running egg_info
+[2.214s] writing ../../build/phantom_controller/phantom_controller.egg-info/PKG-INFO
+[2.214s] writing dependency_links to ../../build/phantom_controller/phantom_controller.egg-info/dependency_links.txt
+[2.216s] writing entry points to ../../build/phantom_controller/phantom_controller.egg-info/entry_points.txt
+[2.216s] writing requirements to ../../build/phantom_controller/phantom_controller.egg-info/requires.txt
+[2.216s] writing top-level names to ../../build/phantom_controller/phantom_controller.egg-info/top_level.txt
+[2.218s] reading manifest file '../../build/phantom_controller/phantom_controller.egg-info/SOURCES.txt'
+[2.226s] writing manifest file '../../build/phantom_controller/phantom_controller.egg-info/SOURCES.txt'
+[2.227s] running build
+[2.227s] running build_py
+[2.227s] copying phantom_controller/KinematicCalculator.py -> /home/luisen/Documents/Universidad/Robotica/proyect_ws/build/phantom_controller/build/lib/phantom_controller
+[2.228s] running install
+[2.228s] running install_lib
+[2.230s] copying /home/luisen/Documents/Universidad/Robotica/proyect_ws/build/phantom_controller/build/lib/phantom_controller/KinematicCalculator.py -> /home/luisen/Documents/Universidad/Robotica/proyect_ws/install/phantom_controller/lib/python3.10/site-packages/phantom_controller
+[2.230s] byte-compiling /home/luisen/Documents/Universidad/Robotica/proyect_ws/install/phantom_controller/lib/python3.10/site-packages/phantom_controller/KinematicCalculator.py to KinematicCalculator.cpython-310.pyc
+[2.231s] running install_data
+[2.234s] running install_egg_info
+[2.234s] removing '/home/luisen/Documents/Universidad/Robotica/proyect_ws/install/phantom_controller/lib/python3.10/site-packages/phantom_controller-0.0.0-py3.10.egg-info' (and everything under it)
+[2.235s] Copying ../../build/phantom_controller/phantom_controller.egg-info to /home/luisen/Documents/Universidad/Robotica/proyect_ws/install/phantom_controller/lib/python3.10/site-packages/phantom_controller-0.0.0-py3.10.egg-info
+[2.235s] running install_scripts
+[2.266s] Installing phantom_controller script to /home/luisen/Documents/Universidad/Robotica/proyect_ws/install/phantom_controller/lib/phantom_controller
+[2.266s] writing list of installed files to '/home/luisen/Documents/Universidad/Robotica/proyect_ws/build/phantom_controller/install.log'
+[2.319s] Invoked command in '/home/luisen/Documents/Universidad/Robotica/proyect_ws/src/phantom_controller' returned '0': PYTHONPATH=/home/luisen/Documents/Universidad/Robotica/proyect_ws/build/phantom_controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/luisen/Documents/Universidad/Robotica/proyect_ws/install/phantom_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/phantom_controller build --build-base /home/luisen/Documents/Universidad/Robotica/proyect_ws/build/phantom_controller/build install --record /home/luisen/Documents/Universidad/Robotica/proyect_ws/build/phantom_controller/install.log --single-version-externally-managed install_data

@@ -1,0 +1,3 @@
+[console_scripts]
+local_controller = local_controller.RobotInterface:main
+

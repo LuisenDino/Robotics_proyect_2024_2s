@@ -1,0 +1,3 @@
+[console_scripts]
+phantom_controller = phantom_controller.PhantomController:main
+
