@@ -30,6 +30,8 @@ class RobotInterface(Node, QWidget):
         self.triggers_label = None
 
         self.camera_display = None  
+        self.position_label = None
+        self.joints_label = None
 
         self.start = False
 
@@ -41,7 +43,7 @@ class RobotInterface(Node, QWidget):
         # Subscribers
         self.camera_subscriber = self.create_subscription(Image, '/robot/camera', self.camera_callback, 10)
         self.position_subscriber = self.create_subscription(Float32MultiArray, '/robot/position', self.position_callback, 10)
-        self.joints_subscriber = self.create_subscription(Float32MultiArray, '/robot/joints', self.joints_callback, 10)
+        self.joints_subscriber = self.create_subscription(Float32MultiArray, '/robot/joint_states', self.joints_callback, 10)
 
         self.camera_subscriber 
         self.position_subscriber
@@ -215,11 +217,13 @@ class RobotInterface(Node, QWidget):
 
     def position_callback(self, data):
         x, y, z, phi, gripper = data.data
-        self.position_label.setText(f"Posición:\n x: {x:.2f}\n y: {y:.2f}\n z: {z:.2f}\n phi: {phi:.2f}, gripper: {gripper:.2f}")
+        if self.position_label is not None:
+            self.position_label.setText(f"Posición:\n x: {x:.2f}\n y: {y:.2f}\n z: {z:.2f}\n phi: {phi:.2f}, gripper: {gripper:.2f}")
 
     def joints_callback(self, data):
         j1, j2, j3, j4, j5 = data.data
-        self.joints_label.setText(f"Articulaciones:\n J1: {j1:.2f}\n J2: {j2:.2f}\n J3: {j3:.2f}\n J4: {j4:.2f}\n J5: {j5:.2f}")
+        if self.joints_label is not None:
+            self.joints_label.setText(f"Articulaciones:\n J1: {j1:.2f}\n J2: {j2:.2f}\n J3: {j3:.2f}\n J4: {j4:.2f}\n J5: {j5:.2f}")
 
     def change_mode(self):
         mode = self.mode_selector.currentText()

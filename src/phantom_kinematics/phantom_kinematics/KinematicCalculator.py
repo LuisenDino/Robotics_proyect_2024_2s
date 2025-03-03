@@ -7,6 +7,7 @@ import spatialmath as sm
 
 class KinematicCalculator():
     def __init__(self):
+        self.gripper = 0
 
         self.robot = DHRobot( [
             RevoluteDH(alpha=-math.pi/2, a=0, d=137, offset=0, qlim=[-math.pi, math.pi]),
@@ -24,10 +25,7 @@ class KinematicCalculator():
             [0, 0, 0, 1]
         ])
 
-
-
-
-    def calcRobotPosition(self, q):
+    def calc_robot_position(self, q):
         """
         Calcula la cinemática directa de un robot pincher dado un vector de ángulos de las articulaciones.
         Args:
@@ -37,15 +35,17 @@ class KinematicCalculator():
         """
 
         # self.robot.q = q
-        # for i in range(len(q)):
-        #     q[i] = math.radians(q[i])   
+        for i in range(len(q)):
+            q[i] = math.radians(q[i])   
 
         
         T = self.robot.fkine(q)
-        angle_axis = T.rpy()
-        return np.array([T.t[0], T.t[1], T.t[2], angle_axis[2], 0.00], dtype=float)
+
+        gamma = 90 - (math.degrees(q[3])+math.degrees(q[2]) +  math.degrees(q[1]))
+
+        return np.array([T.t[0], T.t[1], T.t[2], gamma, 0.00], dtype=float)
     
-    def calcRobotJoints(self, pose):
+    def calc_robot_joints(self, pose):
         """
         Calcula la cinemática inversa de un robot pincher dado un vector de posición.
         Args:
@@ -70,6 +70,21 @@ class KinematicCalculator():
 
         resultado = [q1, q2, q3, math.radians(q4)]
 
+        for i in range(len(resultado)):
+            resultado[i] = math.degrees(resultado[i])
+
         return resultado
 
-        
+    def get_gripper_position(self, data):
+        """
+        Calcula la apertura o cierre del gripper
+        Args:
+            data (float): Posición del gripper en porcentaje.
+        Returns:
+            int: 0 si el gripper está cerrado, 1 si está abierto.
+        """
+        if data > 0.7:
+            self.gripper = 1
+        if data < -0.7:
+            self.gripper = 0
+        return self.gripper

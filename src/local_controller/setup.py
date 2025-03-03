@@ -1,4 +1,6 @@
 from setuptools import find_packages, setup
+import os
+from glob import glob
 
 package_name = 'local_controller'
 
@@ -10,6 +12,7 @@ setup(
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
+        (os.path.join("share", package_name), glob("launch/*.py")),
     ],
     install_requires=['setuptools', 'rclpy', 'std_msgs', 'sensor_msgs', 'PyQt5', 'pygame', 'cv_bridge'],
     zip_safe=True,
@@ -23,4 +26,8 @@ setup(
             'local_controller = local_controller.RobotInterface:main',
         ],
     },
+    # data_files=[
+    #     # Instalar el archivo launch en el share de ROS 2
+    #     
+    # ],
 )

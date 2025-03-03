@@ -13,6 +13,8 @@
   <depend>PyQt5</depend>
   <depend>pygame</depend>
   <depend>cv_bridge</depend>
+  <depend>launch_ros</depend>
+  <depend>launch</depend>
   <!-- <depend>opencv-python</depend> -->
 
   <test_depend>ament_copyright</test_depend>
