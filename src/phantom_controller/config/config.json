@@ -33,7 +33,7 @@
     },
     "./gripper_close_joint": {
         "id": 5, 
-        "max_torque": 80, 
+        "max_torque": 150, 
         "max_temperature": 70,
         "max_angle": 1,
         "min_angle": 0,

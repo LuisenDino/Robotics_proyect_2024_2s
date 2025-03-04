@@ -1,12 +1,14 @@
 import json
 import os
 import rclpy
+import cv2
 
 
 from dynamixel_sdk import *  # Importar la SDK de Dynamixel
 from rclpy.node import Node  # Importar la clase Node de rclpy
-from sensor_msgs.msg import JointState  # Importar el mensaje JointState de sensor_msgs
+from sensor_msgs.msg import JointState, Image  # Importar el mensaje JointState e Image de sensor_msgs
 from ament_index_python.packages import get_package_share_directory
+from cv_bridge import CvBridge  # Importar la clase CvBridge de cv_bridge
 
 ADDR_MX_TORQUE_ENABLE = 24  # Dirección de la dirección de habilitación del torque
 ADDR_MX_GOAL_POSITION = 30  # Dirección de la posición objetivo
@@ -70,9 +72,16 @@ class PhantomController(Node):
             dxl_comm_result, dxl_error = self.packetHandler.write4ByteTxRx(self.portHandler, joint_id, ADDR_MX_GOAL_POSITION, self.degrees_to_dxl_position(joint_information['initial_angle']))
             self.check_configuration('posición inicial', joint_name, dxl_comm_result, dxl_error)
 
+        # Inicialización de la cámara
+        self.cap = cv2.VideoCapture(0)
+        self.bridge = CvBridge()    
+
+
         # Confifuración del nodo
         self.joints_publisher = self.create_publisher(JointState, 'robot/joint_states', 10)
         self.joints_subscriber = self.create_subscription(JointState, 'robot/joint_commands', self.joints_callback, 10)
+        self.camera_publisher = self.create_publisher(Image, '/robot/camera', 10)
+        self.create_timer(0.1, self.publish_camera_image)
         self.create_timer(0.1, self.publish_joints)
 
 
@@ -87,8 +96,8 @@ class PhantomController(Node):
     def move_to_position(self, joint_name, position):
         joint_id = self.config[joint_name]['id']
         position = self.degrees_to_dxl_position(position)
-        dxl_comm_result, dxl_error = self.packetHandler.write4ByteTxRx(self.portHandler, joint_id, ADDR_MX_GOAL_POSITION, position)
-        self.check_configuration('posición', joint_name, dxl_comm_result, dxl_error)
+        self.packetHandler.write4ByteTxRx(self.portHandler, joint_id, ADDR_MX_GOAL_POSITION, position)
+        
 
     def degrees_to_dxl_position(self, degrees):
         return int(degrees * 1023 / 300)
@@ -98,7 +107,11 @@ class PhantomController(Node):
 
     def joints_callback(self, msg):
         for (joint_name, position) in zip(msg.name, msg.position):
-            self.move_to_position(joint_name, position+150) # los 150 grados se añaden por que es la que se define como posición 0 en la cinemática directa
+            if 'gripper_joint' in self.config[joint_name] and self.config[joint_name]['gripper_joint']:
+                position = max(0, min(1, position))
+                self.move_to_position(joint_name, position)  # El gripper solo puede ir de 0 a 1
+            else:
+                self.move_to_position(joint_name, position + 150)  # los 150 grados se añaden porque es la que se define como posición 0 en la cinemática directa
 
     def publish_joints(self):
         joint_state = JointState()
@@ -116,7 +129,14 @@ class PhantomController(Node):
 
         self.joints_publisher.publish(joint_state)
 
+    def publish_camera_image(self):
+        ret, frame = self.cap.read()
+        if ret:
+            image_message = self.bridge.cv2_to_imgmsg(frame, encoding="bgr8")
+            self.camera_publisher.publish(image_message)
+
     def destroy_node(self):
+        self.cap.release()
         for joint_name in self.config.keys():
             joint_id = self.config[joint_name]['id']
             dxl_comm_result, dxl_error = self.packetHandler.write1ByteTxRx(self.portHandler, joint_id, ADDR_MX_TORQUE_ENABLE, 0)
