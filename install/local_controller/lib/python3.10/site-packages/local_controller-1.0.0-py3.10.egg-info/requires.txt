@@ -1,7 +1,0 @@
-PyQt5
-cv_bridge
-pygame
-rclpy
-sensor_msgs
-setuptools
-std_msgs
