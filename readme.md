@@ -122,7 +122,7 @@ El resultado de la ejecución del anterior código, se muestra en la imagen sigu
 
 Como se puede observar en la imagen anterior, tanto la posición como la orientación obtenidos con las funciones del ToolBox de Peter Corke, coinciden con los resultados de nuestro propio algoritmo, comprobando la validez de nuestro proceso.
 
-Finalmente se convierte la función a lenguaje python para poder ser utilizada con ROS:
+Finalmente se convierte la función de cinemática directa a lenguaje python para poder ser utilizada con ROS:
 
 ```python
 def calc_robot_pose(q):
@@ -237,11 +237,74 @@ Ya con q3 calculado, haciendo un análisis geometrico podemos calcular a los án
   <img src="Figuras/ec8.png" alt="Descripción" width="300" height="50">
 </p>
 
-Y finalmente, el ángulo q4 queda de la siguiente manera:
+Y finalmente, ya conociendo a q2 y q3, el ángulo q4 queda de la siguiente manera:
 
 <p align="center">
   <img src="Figuras/ec9.png" alt="Descripción" width="200" height="20">
 </p>
+
+Este proceso fue implementado en una función de Matlab como se muestra a continuación: 
+
+```matlab
+function q = getInv(p)
+    x=p(1);
+    y=p(2);
+    z=p(3); 
+    v=[x;y;z-137];
+    theta=90-atan2d(norm(cross([0;0;1],v)),dot([0;0;1],v)); %angulo entre el vector director en dirección z y el vector que va desde la articulación 2 al TCP
+    q(1)=atan2d(y,x);
+    r=95*cosd(theta);
+    pmx=x-r*cosd(q(1));
+    pmy=y-r*sind(q(1));
+    if (x*pmx <= 0) && (y*pmy <= 0)
+        rm = -sqrt(pmx^2 + pmy^2);
+    else
+        rm = sqrt(pmx^2 + pmy^2);
+    end
+    pmz = z-95*sind(theta);
+    cos_q3 = (pmx^2 + pmy^2 + (pmz-137)^2 - 22050)/22050;
+    q(3) = atan2d(sqrt(1-cos_q3^2),cos_q3);
+    q(2) = atan2d(rm,pmz-137)-atan2d(105*sqrt(1-cos_q3^2),105*(1+cos_q3));
+    q(4) = 90-theta-q(2)-q(3);
+    q(5) = 0;  %apertura y cierre de la pinza
+end
+```
+
+A modo de ilustración se va a calcular usando Matlab, las coordenadas articulares [q1 q2 q3 q4 q5] (q5 no hace parte de la cinemática inversa, sino que es arbitrario y corresponde a la apertura y cierre de la pinza), con un determinado valor de pose, como por ejemplo [px, py, pz, θ] = [150, 200, 200, 60]:
+
+```matlab
+>> q = getInv([150, 200, 300, 60])
+
+q =
+
+   53.1301   81.0504   28.7724  -79.8228         0
+```
+Y para comprobar nuestra implementación, se grafica al robot usando el Toolbox con estos ángulos q = [q1 q2 q3 q4] obtenidos, y se verifica si la pose mostrada en la gráfica corresponde a la introducida en nuestra función de cinemática inversa ([px, py, pz, θ] = [150, 200, 200, 60]):
+
+```matlab
+%Esta parte del código comprueba la cinemática inversa
+ws = [-70 80 -70 80 -20 70]*8;
+plot_options = {'workspace',ws,'scale',0.5,'view',[-125 125],'tilesize',2,'ortho','lightpos',[2 2 10],'floorlevel',0,'jvec'};
+L(1) = Link('revolute','alpha',-pi/2,'a',0,'d',137,'offset',0,'qlim',[-pi pi]);
+L(2) = Link('revolute','alpha',0,'a',105,'d',0,'offset',-pi/2,'qlim',[-pi pi]);
+L(3) = Link('revolute','alpha',0,'a',105,'d',0,'offset',0,'qlim',[-pi pi]);
+L(4) = Link('revolute','alpha',0,'a',95,'d',0,'offset',0,'qlim',[-pi pi]);
+pincher = SerialLink(L,'name','Pincher','plotopt',plot_options);
+pincher.tool = [0 0 1 0;0 1 0 0;-1 0 0 0;0 0 0 1]*[0 1 0 0;-1 0 0 0;0 0 1 0;0 0 0 1];
+q = [deg2rad(q(1)) deg2rad(q(2)) deg2rad(q(3)) deg2rad(q(4))];
+pincher.teach(q,'eul');
+hold on
+trplot(eye(4),'frame','0','length',60,'thick',1);
+```
+Y el resultado obtenido se muestra en la siguiente imagen:
+
+<p align="center">
+  <img src="Figuras/comprobacionDirecta.png" alt="Descripción" width="800" height="500">
+</p>
+
+Como se puede apreciar en esta imagen, efectivamente la pose introducida en nuestra función es la misma graficada por el ToolBox de Peter Corke, comprobando el correcto funcionamiento de nuestro algoritmo.
+
+Finalmente se convierte la función de cinemática directa a lenguaje python para poder ser utilizada con ROS:
 
 ```python
    def calc_robot_joints(pose):
