@@ -58,7 +58,7 @@ class KinematicCalculator():
         r = 95*math.cos(math.radians(pose[3]))
         pmx = pose[0] - r*math.cos(q1)
         pmy = pose[1] - r*math.sin(q1)
-        if pose[0]*pmx < 0 and pose[1]*pmy < 0:
+        if pose[0]*pmx <= 0 and pose[1]*pmy <= 0:
             rm = -math.sqrt(pmx**2 + pmy**2)
         else:
             rm = math.sqrt(pmx**2 + pmy**2)
