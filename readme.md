@@ -183,7 +183,7 @@ Ayudados por la imagen anterior, se puede ver que q1 es el ángulo que se forma 
   <img src="Figuras/ec1.png" alt="Descripción" width="100" height="50">
 </p>
 
-Donde pmx y pmy son las coordenadas x e y de la muñeca. Aunque no se conocen todavia ni pmx ni pmy, debido a que los últimos 3 eslabones están embebidos en un plano vertical definido por la línea rm, sabemos que 
+Donde pmx y pmy son las coordenadas x e y de la muñeca. Aunque no se conocen todavia ni pmx ni pmy, sí sabemos que los últimos 3 eslabones están embebidos en un plano vertical definido por la línea rm, y por lo tanto:
 
 <p align="center">
   <img src="Figuras/ec2.png" alt="Descripción" width="100" height="50">
