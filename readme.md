@@ -186,61 +186,61 @@ Ayudados por la imagen anterior, se puede ver que q1 es el ángulo que se forma 
 Donde pmx y pmy son las coordenadas x e y de la muñeca. Aunque no se conocen todavia ni pmx ni pmy, debido a que los últimos 3 eslabones están embebidos en un plano vertical definido por la línea rm, sabemos que 
 
 <p align="center">
-  <img src="Figuras/ec2.png" alt="Descripción" width="800" height="500">
+  <img src="Figuras/ec2.png" alt="Descripción" width="100" height="50">
 </p>
 
 Y por lo tando:
 
 <p align="center">
-  <img src="Figuras/ec3.png" alt="Descripción" width="800" height="500">
+  <img src="Figuras/ec3.png" alt="Descripción" width="100" height="50">
 </p>
 
 Ya conociendo a q1, ahora si podemos calcular las coordenadas de la muñeca pmx, pmy y pmz. Para hacerlo, nos basamos en la siguiente imagen, en la cual solo se ha dibujado el ángulo de inclinación θ de la muñeca, y el primer y último eslabón: L1 = 137mm y L4 = 95mm respectivamente.
 
 <p align="center">
-  <img src="Figuras/muneca.png" alt="Descripción" width="800" height="500">
+  <img src="Figuras/muneca.png" alt="Descripción" width="300" height="500">
 </p>
 
 Ayudados con esta imagen, podemos ver que:
 
 <p align="center">
-  <img src="Figuras/ec4.png" alt="Descripción" width="800" height="500">
+  <img src="Figuras/ec4.png" alt="Descripción" width="100" height="50">
 </p>
 
 Y por lo tanto, las coordenadas de la muñéca son:
 
 <p align="center">
-  <img src="Figuras/ec5.png" alt="Descripción" width="800" height="500">
+  <img src="Figuras/ec5.png" alt="Descripción" width="150" height="120">
 </p>
 
 Para q2 y q3, se vé que el robot forma un codo con los eslabones L2 y L3. La siguiente imagen muestra un esquema de este codo:
 
 <p align="center">
-  <img src="Figuras/q2_q3.png" alt="Descripción" width="800" height="500">
+  <img src="Figuras/q2_q3.png" alt="Descripción" width="300" height="300">
 </p>
 
 Aplicando la ley del coseno con los eslabones L2 y L3, y despejando a cos(q3) obtenemos:
 
 <p align="center">
-  <img src="Figuras/ec6.png" alt="Descripción" width="800" height="500">
+  <img src="Figuras/ec6.png" alt="Descripción" width="200" height="50">
 </p>
 
 Por lo tanto la articulación q3 sería:
 
 <p align="center">
-  <img src="Figuras/ec7.png" alt="Descripción" width="800" height="500">
+  <img src="Figuras/ec7.png" alt="Descripción" width="100" height="80">
 </p>
 
 Ya con q3 calculado, haciendo un análisis geometrico podemos calcular a los ángulos α y β cuya dierencia es igual al ángulo q2, como se muestra en la ecuación siguiente:
 
 <p align="center">
-  <img src="Figuras/ec8.png" alt="Descripción" width="800" height="500">
+  <img src="Figuras/ec8.png" alt="Descripción" width="300" height="50">
 </p>
 
 Y finalmente, el ángulo q4 queda de la siguiente manera:
 
 <p align="center">
-  <img src="Figuras/ec9.png" alt="Descripción" width="800" height="500">
+  <img src="Figuras/ec9.png" alt="Descripción" width="100" height="50">
 </p>
 
 ```python
