@@ -91,6 +91,23 @@ T =
          0         0         0    1.0000
 ```
 
+Para comprobar si este resultado es correcto, se hace uso del ToolBox de Peter Corke para graficar el robot, como se muestra a continuación:
+
+```matlab
+%Esta parte del código comprueba la cinemática inversa
+ws = [-70 80 -70 80 -20 70]*8;     %se define el espacio de trabajo
+plot_options = {'workspace',ws,'scale',0.5,'view',[-125 125],'tilesize',2,'ortho','lightpos',[2 2 10],'floorlevel',0,'jvec'};   %se define la configuración del gráfico
+L(1) = Link('revolute','alpha',-pi/2,'a',0,'d',137,'offset',0,'qlim',[-pi pi]);         %se definen cada eslabón con los parámetros DH
+L(2) = Link('revolute','alpha',0,'a',105,'d',0,'offset',-pi/2,'qlim',[-pi pi]);
+L(3) = Link('revolute','alpha',0,'a',105,'d',0,'offset',0,'qlim',[-pi pi]);
+L(4) = Link('revolute','alpha',0,'a',95,'d',0,'offset',0,'qlim',[-pi pi]);
+pincher = SerialLink(L,'name','Pincher','plotopt',plot_options);                        %se define el robot
+pincher.tool = [0 0 1 0;0 1 0 0;-1 0 0 0;0 0 0 1]*[0 1 0 0;-1 0 0 0;0 0 1 0;0 0 0 1];   %se modifica el TCP para que cumpla el estandar "noa"  
+pincher.teach(q,'eul');          %se grafica el robot
+hold on
+trplot(eye(4),'frame','0','length',60,'thick',1);    %se grafica el sistema base
+```
+
 ### 2. CINEMÁTICA INVERSA:
 
 
