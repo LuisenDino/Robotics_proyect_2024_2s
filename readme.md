@@ -81,7 +81,7 @@ Observe que la matriz E no es una matriz de DH. Despúes de realizar el alrgorit
 A modo de ilustración se va a calcular usando Matlab la pose del efector final "noa" con un conjunto de valores articulares arbitrarios, como por ejemplo [15 30 45 60].
 
 ```matlab
-T = getDir([15 30 45 60])
+>> T = getDir([15 30 45 60])
 ```
 ```plaintext
 T =
