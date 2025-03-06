@@ -198,7 +198,7 @@ Entonces podemos deducir que:
 Ya conociendo a q1, ahora si podemos calcular las coordenadas de la muñeca pmx, pmy y pmz. Para hacerlo, nos basamos en la siguiente imagen, en la cual solo se ha dibujado el ángulo de inclinación θ de la muñeca, y el primer y último eslabón: L1 = 137mm y L4 = 95mm respectivamente.
 
 <p align="center">
-  <img src="Figuras/muneca.png" alt="Descripción" width="300" height="500">
+  <img src="Figuras/muneca.png" alt="Descripción" width="400" height="500">
 </p>
 
 Ayudados con esta imagen, podemos ver que:
