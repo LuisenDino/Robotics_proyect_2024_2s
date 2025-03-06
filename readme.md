@@ -171,24 +171,77 @@ def calc_robot_pose(q):
 
 ### 2. CINEMÁTICA INVERSA:
 
-Para el cálculo de cinemática inversa, se considera la pose final del robot con 4 argumantos: [px, py, pz, θ]. En donde px, py y pz son las coordenadas del efector final segun el marco de referencia del mundo (ubicado en la base del robot, alineado con la articulación 1) y θ el ángulo de la muñeca respecto al plano XY.
+Para el cálculo de cinemática inversa, se considera la pose final del robot con 4 argumantos: [px, py, pz, θ]. En donde px, py y pz son las coordenadas del efector final segun el marco de referencia del mundo (ubicado en la base del robot, alineado con la articulación 1) y θ el ángulo de la muñeca respecto al plano XY. Para el cálculo de q1, nos basamos en la siguiente imagen:
 
-[poner aquí grafica para q1]
+<p align="center">
+  <img src="Figuras/q1.png" alt="Descripción" width="800" height="500">
+</p>
 
-Ayudados del gráfico anterior, se puede ver que q1 es el ángulo que se forma en el plano XY, y se calcularía como: 
+Ayudados por la imagen anterior, se puede ver que q1 es el ángulo que se forma en el plano XY, y se calcularía como: 
 
-q1 = arctan(y0/x0)
+<p align="center">
+  <img src="Figuras/ec1.png" alt="Descripción" width="800" height="500">
+</p>
 
 Donde pmx y pmy son las coordenadas x e y de la muñeca. Aunque no se conocen todavia ni pmx ni pmy, debido a que los últimos 3 eslabones están embebidos en un plano vertical definido por la línea rm, sabemos que 
 
-[Gráfica para q2, q3 de codo]
+<p align="center">
+  <img src="Figuras/ec2.png" alt="Descripción" width="800" height="500">
+</p>
 
-Para q2 y q3 se vé que el robot forma un codo. Este problema de codo siendo un estandar en robótica, se deduce que:
+Y por lo tando:
 
-q2 = arctan(r'/(z0'))
-q3 = arctan((1-cos_ang^2)^0.5/cos_ang)
+<p align="center">
+  <img src="Figuras/ec3.png" alt="Descripción" width="800" height="500">
+</p>
 
-*(explicar de donde salen r', z0', cos_ang)
+Ya conociendo a q1, ahora si podemos calcular las coordenadas de la muñeca pmx, pmy y pmz. Para hacerlo, nos basamos en la siguiente imagen, en la cual solo se ha dibujado el ángulo de inclinación θ de la muñeca, y el primer y último eslabón: L1 = 137mm y L4 = 95mm respectivamente.
+
+<p align="center">
+  <img src="Figuras/muneca.png" alt="Descripción" width="800" height="500">
+</p>
+
+Ayudados con esta imagen, podemos ver que:
+
+<p align="center">
+  <img src="Figuras/ec4.png" alt="Descripción" width="800" height="500">
+</p>
+
+Y por lo tanto, las coordenadas de la muñéca son:
+
+<p align="center">
+  <img src="Figuras/ec5.png" alt="Descripción" width="800" height="500">
+</p>
+
+Para q2 y q3, se vé que el robot forma un codo con los eslabones L2 y L3. La siguiente imagen muestra un esquema de este codo:
+
+<p align="center">
+  <img src="Figuras/q2_q3.png" alt="Descripción" width="800" height="500">
+</p>
+
+Aplicando la ley del coseno con los eslabones L2 y L3, y despejando a cos(q3) obtenemos:
+
+<p align="center">
+  <img src="Figuras/ec6.png" alt="Descripción" width="800" height="500">
+</p>
+
+Por lo tanto la articulación q3 sería:
+
+<p align="center">
+  <img src="Figuras/ec7.png" alt="Descripción" width="800" height="500">
+</p>
+
+Ya con q3 calculado, haciendo un análisis geometrico podemos calcular a los ángulos α y β cuya dierencia es igual al ángulo q2, como se muestra en la ecuación siguiente:
+
+<p align="center">
+  <img src="Figuras/ec8.png" alt="Descripción" width="800" height="500">
+</p>
+
+Y finalmente, el ángulo q4 queda de la siguiente manera:
+
+<p align="center">
+  <img src="Figuras/ec9.png" alt="Descripción" width="800" height="500">
+</p>
 
 ```python
    def calc_robot_joints(pose):
