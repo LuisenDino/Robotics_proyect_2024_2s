@@ -15,13 +15,13 @@
 
 ### 1. CÁLCULO DE LA CINEMÁTICA DIRECTA:
 
-El primer paso que se realizó, para poder desarrollar la cinemática directa del Robot PhantomX Pincher, fue determinar la posición home del mismo y tomar las medidas de cada uno de sus eslabones. En la siguiente imagen se puede observar esta información:
+El primer paso que se realizó, para poder desarrollar la cinemática directa del Robot PhantomX Pincher, fue determinar la posición home del mismo (todas las articulaciones en cero) y tomar las medidas de cada uno de sus eslabones. En la siguiente imagen se puede observar esta información:
 
 <p align="center">
   <img src="Figuras/dimensionesPincher.png" alt="Descripción" width="400" height="600">
 </p>
 
-El marco de referencia "base" se pudo en el piso y el "TCP" se puso 15 mm antes del extremo del robot, en el punto de agarre óptimo de la pinza.
+El marco de referencia "base" se puso en el piso y el "TCP" se puso 15 mm antes del extremo del robot, en el punto de agarre óptimo de la pinza.
 
 Posterior a ello, se realizó el diagrama del robót para poder dibujar los sistemas de referencia de cada eslabón siguiendo las reglas del algoritmo de Denavit-Hartenberg. Este proceso se ilustra en la siguiente figura:
 
@@ -29,7 +29,11 @@ Posterior a ello, se realizó el diagrama del robót para poder dibujar los sist
   <img src="Figuras/diagramaDH_pincher.png" alt="Descripción" width="600" height="400">
 </p>
 
+Observe que hay un sistema de referencia "noa" adicional a los exigidos por el algoritmo de Denavit-Hartenberg. Esto se debe a que, para que la pinza cumpla el estandar "noa", es necesario realizar una rotación adicional sobre el último sistema de referencia de Denavit-Hartenberg. Sin embargo, este último sistema de referencia "noa", al no hacer parte del algoritmo de Denavit-Hartenberg, no hará parte de la lista de los parametros DH. Teniendo en cuenta esto, a partir de la imagen anterior, es posible obtener los parametros de DH como se muestra a continuación:
 
+<p align="center">
+  <img src="Figuras/parametrosDH.png" alt="Descripción" width="800" height="200">
+</p>
 
 ### 2. CINEMÁTICA INVERSA:
 
