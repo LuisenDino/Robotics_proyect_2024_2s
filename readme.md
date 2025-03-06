@@ -171,12 +171,15 @@ def calc_robot_pose(q):
 
 ### 2. CINEMÁTICA INVERSA:
 
-Para el cálculo de cinemática inversa, se considera la pose final del robot con 4 argumantos: [px, py, pz, θ]. En donde px, py y pz son las coordenadas segun el marco de referencia del mundo (ubicado en la base del robot, alineado con la articulación 1) y θ el ángulo de la muñeca respecto al plano XY.
+Para el cálculo de cinemática inversa, se considera la pose final del robot con 4 argumantos: [px, py, pz, θ]. En donde px, py y pz son las coordenadas del efector final segun el marco de referencia del mundo (ubicado en la base del robot, alineado con la articulación 1) y θ el ángulo de la muñeca respecto al plano XY.
 
 [poner aquí grafica para q1]
 
-Ayudados del gráfico anterior, se puede ver que q1 es el ángulo que se forma en el plano XY, por ende q1 se calcula facilmente como: 
+Ayudados del gráfico anterior, se puede ver que q1 es el ángulo que se forma en el plano XY, y se calcularía como: 
+
 q1 = arctan(y0/x0)
+
+Donde pmx y pmy son las coordenadas x e y de la muñeca. Aunque no se conocen todavia ni pmx ni pmy, debido a que los últimos 3 eslabones están embebidos en un plano vertical definido por la línea rm, sabemos que 
 
 [Gráfica para q2, q3 de codo]
 
