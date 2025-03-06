@@ -35,10 +35,12 @@ Observe que hay un sistema de referencia "noa" adicional a los exigidos por el a
   <img src="Figuras/parametrosDH.png" alt="Descripción" width="800" height="150">
 </p>
 
+Teniendo en cuenta el cuadro anterior, se definen las matrices de DH y se encuentra la matriz de transformación homogenea que define la pose de "noa" respecto al sistema base. Este proceso fue realizado implementando una función en Matlab, la cual se muestra a continuación:
+
 ```matlab
-function T = getDir(q)
+function T = getDir(q) %T es la matriz de transformación que relaciona al sistema "noa" con el sistema "base" y "q" es el vector de valores articulares [q1 q2 q3 q4] en grados
     
-    q = deg2rad(q);
+    q = deg2rad(q); %se convierten los valores articulares a radianes
     
     % Matriz A
     A = [cos(q(1)), 0, -sin(q(1)), 0;
@@ -73,6 +75,8 @@ function T = getDir(q)
     T = A*B*C*D*E;
 end
 ```
+
+Observe que la matriz E no es una matriz de DH. Despúes de realizar el alrgoritmo de DH, la matriz E se multiplica con la matriz de transformación homogenea del sistema 4 respecto a la base, para que de ese modo, las coordenadas del efector final cumplan con el estandar "noa".
 
 ### 2. CINEMÁTICA INVERSA:
 
