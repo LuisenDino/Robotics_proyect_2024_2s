@@ -114,11 +114,13 @@ pincher.teach(q,'eul');          %se grafica el robot
 hold on
 trplot(eye(4),'frame','0','length',60,'thick',1);    %se grafica el sistema base
 ```
-Como se puede observar en la imagen anterior, tanto la posición como la orientación obtenidos con las funciones del ToolBox de Peter Corke, coinciden con los resultados de nuestro propio algoritmo, comprobando la validez de nuestro proceso.
+El resultado de la ejecución del anterior código, se muestra en la imagen siguiente:
 
 <p align="center">
   <img src="Figuras/comprobacionDirecta.png" alt="Descripción" width="800" height="600">
 </p>
+
+Como se puede observar en la imagen anterior, tanto la posición como la orientación obtenidos con las funciones del ToolBox de Peter Corke, coinciden con los resultados de nuestro propio algoritmo, comprobando la validez de nuestro proceso.
 
 ### 2. CINEMÁTICA INVERSA:
 
