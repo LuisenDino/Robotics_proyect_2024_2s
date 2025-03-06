@@ -18,5 +18,5 @@
 El primer paso que se realizó, para poder desarrollar la cinemática directa del Robot PhantomX Pincher, fue determinar la posición home del mismo y tomar las medidas de cada uno de sus eslabones. En la siguiente imagen se puede observar esta información:
 
 <p align="center">
-  <img src="Figuras/dimensionesPincher.png" alt="Descripción" width="300" height="200">
+  <img src="Figuras/dimensionesPincher.png" alt="Descripción" width="500" height="800">
 </p>
