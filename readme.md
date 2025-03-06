@@ -304,7 +304,7 @@ Y el resultado obtenido se muestra en la siguiente imagen:
 
 Como se puede apreciar en esta imagen, efectivamente la pose introducida en nuestra función es la misma graficada por el ToolBox de Peter Corke, comprobando el correcto funcionamiento de nuestro algoritmo.
 
-Finalmente se convierte la función de cinemática directa a lenguaje python para poder ser utilizada con ROS:
+Finalmente se convierte la función de cinemática inversa a lenguaje python para poder ser utilizada con ROS:
 
 ```python
    def calc_robot_joints(pose):
