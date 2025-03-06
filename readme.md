@@ -78,7 +78,7 @@ end
 
 Observe que la matriz E no es una matriz de DH. Despúes de realizar el alrgoritmo de DH, la matriz E se multiplica con la matriz de transformación homogenea del sistema 4 respecto a la base, para que de ese modo, las coordenadas del efector final cumplan con el estandar "noa".
 
-A modo de ilustración se va a calcular usando Matlab la pose del efector final "noa" con un conjunto de valores articulares arbitrarios, como por ejemplo [15 30 45 60].
+A modo de ilustración se va a calcular usando Matlab, la pose del efector final "noa" con un conjunto de valores articulares arbitrarios, como por ejemplo [15 30 45 60]. La orientación se convierte a ángulos de euler ZYZ para comparar más adelante.
 
 ```matlab
 >> T = getDir([15 30 45 60])
@@ -89,6 +89,13 @@ T =
     0.1830   -0.9659    0.1830   57.2242
     0.7071         0   -0.7071  187.9335
          0         0         0    1.0000
+
+
+>> orientacionEuler = tr2eul(T)
+
+orientacionEuler =
+
+   15.0000  135.0000 -180.0000
 ```
 
 Para comprobar si este resultado es correcto, se hace uso del ToolBox de Peter Corke para graficar el robot, como se muestra a continuación:
@@ -107,6 +114,11 @@ pincher.teach(q,'eul');          %se grafica el robot
 hold on
 trplot(eye(4),'frame','0','length',60,'thick',1);    %se grafica el sistema base
 ```
+Como se puede observar en la imagen anterior, tanto la posición como la orientación obtenidos con las funciones del ToolBox de Peter Corke, coinciden con los resultados de nuestro propio algoritmo, comprobando la validez de nuestro proceso.
+
+<p align="center">
+  <img src="Figuras/comprobacionDirecta.png" alt="Descripción" width="800" height="150">
+</p>
 
 ### 2. CINEMÁTICA INVERSA:
 
