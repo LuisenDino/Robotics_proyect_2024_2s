@@ -350,7 +350,7 @@ Finalmente se convierte la función de cinemática inversa a lenguaje python par
 
 
 
-### 6. TELEOPERACIÓN MANUAL - OPERACIÓN AUTOMÁTICA:
+### 6. TELEOPERACIÓN MANUAL VS OPERACIÓN AUTOMÁTICA:
 
 
 
