@@ -82,8 +82,7 @@ A modo de ilustración se va a calcular usando Matlab la pose del efector final 
 
 ```matlab
 >> T = getDir([15 30 45 60])
-```
-```plaintext
+
 T =
 
     0.6830    0.2588    0.6830  213.5636
