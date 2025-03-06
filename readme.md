@@ -299,7 +299,7 @@ trplot(eye(4),'frame','0','length',60,'thick',1);
 Y el resultado obtenido se muestra en la siguiente imagen:
 
 <p align="center">
-  <img src="Figuras/comprobacionDirecta.png" alt="Descripción" width="800" height="500">
+  <img src="Figuras/comprobacionInversa.png" alt="Descripción" width="800" height="500">
 </p>
 
 Como se puede apreciar en esta imagen, efectivamente la pose introducida en nuestra función es la misma graficada por el ToolBox de Peter Corke, comprobando el correcto funcionamiento de nuestro algoritmo.
