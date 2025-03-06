@@ -124,7 +124,53 @@ Como se puede observar en la imagen anterior, tanto la posición como la orienta
 
 ### 2. CINEMÁTICA INVERSA:
 
+Para el cálculo de cinemática inversa, se considera la pose final del robot con 4 argumantos: [x0, y0, z0, ang0]. En donde x0, y0 y z0 son las coordenadas segun el marco de referencia del mundo (ubicado en la base del robot, alineado con la articulación 1) y ang0 el ángulo de la muñeca, perpendicular según el plano XY.
 
+[poner aquí grafica para q1]
+
+Ayudados del gráfico anterior, se puede ver que q1 es el ángulo que se forma en el plano XY, por ende q1 se calcula facilmente como: 
+q1 = arctan(y0/x0)
+
+[Gráfica para q2, q3 de codo]
+
+Para q2 y q3 se vé que el robot forma un codo. Este problema de codo siendo un estandar en robótica, se deduce que:
+
+q2 = arctan(r'/(z0'))
+q3 = arctan((1-cos_ang^2)^0.5/cos_ang)
+
+*(explicar de donde salen r', z0', cos_ang)
+
+```python
+   def calc_robot_joints(pose):
+        """
+        Calcula la cinemática inversa de un robot pincher dado un vector de posición.
+        Args:
+            pose (list): Lista de 4 elementos que representan la posición del efector final del robot.
+        Returns:
+            list: Lista de 4 elementos que representan los ángulos de las articulaciones en grados.
+        """
+
+        q1 = math.atan2(pose[1], pose[0])
+        r = 95*math.cos(math.radians(pose[3]))
+        pmx = pose[0] - r*math.cos(q1)
+        pmy = pose[1] - r*math.sin(q1)
+        if pose[0]*pmx < 0 and pose[1]*pmy < 0:
+            rm = -math.sqrt(pmx**2 + pmy**2)
+        else:
+            rm = math.sqrt(pmx**2 + pmy**2)
+        pmz = pose[2] - 95*math.sin(math.radians(pose[3]))
+        cos_q3 = (pmx**2 + pmy**2 + (pmz-137)**2 - 22050)/22050
+        q3 = math.atan2(math.sqrt(1-cos_q3**2),cos_q3)
+        q2 = math.atan2(rm,pmz-137) - math.atan2(105*math.sqrt(1-cos_q3**2),105*(1+cos_q3))
+        q4 = 90 - pose[3] - math.degrees(q2) - math.degrees(q3)
+
+        resultado = [q1, q2, q3, math.radians(q4)]
+
+        for i in range(len(resultado)):
+            resultado[i] = math.degrees(resultado[i])
+
+        return resultado
+```
 
 ### 3. DIAGRÁMA DE FLUJO:
 
