@@ -32,7 +32,7 @@ Posterior a ello, se realizó el diagrama del robót para poder dibujar los sist
 Observe que hay un sistema de referencia "noa" adicional a los exigidos por el algoritmo de Denavit-Hartenberg. Esto se debe a que, para que la pinza cumpla el estandar "noa", es necesario realizar una rotación adicional sobre el último sistema de referencia de Denavit-Hartenberg. Sin embargo, este último sistema de referencia "noa", al no hacer parte del algoritmo de Denavit-Hartenberg, no hará parte de la lista de los parametros DH. Teniendo en cuenta esto, a partir de la imagen anterior, es posible obtener los parametros de DH como se muestra a continuación:
 
 <p align="center">
-  <img src="Figuras/parametrosDH.png" alt="Descripción" width="800" height="200">
+  <img src="Figuras/parametrosDH.png" alt="Descripción" width="800" height="150">
 </p>
 
 ### 2. CINEMÁTICA INVERSA:
