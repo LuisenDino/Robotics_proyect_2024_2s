@@ -26,7 +26,7 @@ El marco de referencia "base" se pudo en el piso y el "TCP" se puso 15 mm antes 
 Posterior a ello, se realizó el diagrama del robót para poder dibujar los sistemas de referencia de cada eslabón siguiendo las reglas del algoritmo de Denavit-Hartenberg. Este proceso se ilustra en la siguiente figura:
 
 <p align="center">
-  <img src="Figuras/diagramaDH_pincher.png" alt="Descripción" width="400" height="400">
+  <img src="Figuras/diagramaDH_pincher.png" alt="Descripción" width="600" height="400">
 </p>
 
 
