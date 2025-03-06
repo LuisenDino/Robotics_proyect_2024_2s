@@ -98,7 +98,7 @@ orientacionEuler =
    15.0000  135.0000 -180.0000
 ```
 
-Para comprobar si este resultado es correcto, se hace uso del ToolBox de Peter Corke para graficar el robot, como se muestra a continuación:
+El anterior resultado nos dice que, con esos valores articulares, el efector final "noa" se encontrará en la posición [x y z] = [213.56 57.22 187.93] con orientación [φ θ ψ] = [15 135 -180]. Para comprobar si este resultado es correcto, se hace uso del ToolBox de Peter Corke para graficar el robot, como se muestra a continuación:
 
 ```matlab
 %Esta parte del código comprueba la cinemática inversa
