@@ -240,7 +240,7 @@ Ya con q3 calculado, haciendo un análisis geometrico podemos calcular a los án
 Y finalmente, el ángulo q4 queda de la siguiente manera:
 
 <p align="center">
-  <img src="Figuras/ec9.png" alt="Descripción" width="200" height="50">
+  <img src="Figuras/ec9.png" alt="Descripción" width="200" height="20">
 </p>
 
 ```python
