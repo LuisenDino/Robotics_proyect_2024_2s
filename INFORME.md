@@ -24,3 +24,28 @@ El primer paso que se realizó, para poder desarrollar la cinemática directa de
 El marco de referencia "base" se pudo en el piso y el "TCP" se puso 15 mm antes del extremo del robot, en el punto de agarre óptimo de la pinza.
 
 Posterior a ello
+
+
+
+### 2. CINEMÁTICA INVERSA:
+
+
+
+### 3. DIAGRÁMA DE FLUJO:
+
+
+
+### 4. PLANO DE PLANTA:
+
+
+
+### 5. CÓDIGO:
+
+
+
+### 6. TELEOPERACIÓN MANUAL - OPERACIÓN AUTOMÁTICA:
+
+
+
+### 7. VIDEOS:
+
