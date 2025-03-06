@@ -219,7 +219,7 @@ Para q2 y q3, se vé que el robot forma un codo con los eslabones L2 y L3. La si
   <img src="Figuras/q2_q3.png" alt="Descripción" width="300" height="300">
 </p>
 
-Aplicando la ley del coseno con los eslabones L2 y L3, y despejando a cos(q3) obtenemos:
+Aplicando la ley del coseno con los eslabones L2 = 105 y L3 = 105, y despejando a cos(q3) obtenemos:
 
 <p align="center">
   <img src="Figuras/ec6.png" alt="Descripción" width="300" height="50">
@@ -231,7 +231,7 @@ Por lo tanto la articulación q3 sería:
   <img src="Figuras/ec7.png" alt="Descripción" width="200" height="80">
 </p>
 
-Ya con q3 calculado, haciendo un análisis geometrico podemos calcular a los ángulos α y β cuya dierencia es igual al ángulo q2, como se muestra en la ecuación siguiente:
+Ya con q3 calculado, haciendo un análisis geometrico podemos calcular a los ángulos α y β cuya dierencia β - α es igual al ángulo q2, como se muestra en la ecuación siguiente:
 
 <p align="center">
   <img src="Figuras/ec8.png" alt="Descripción" width="300" height="50">
