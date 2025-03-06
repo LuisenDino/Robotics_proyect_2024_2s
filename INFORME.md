@@ -4,7 +4,7 @@
     <img src="Figuras/UNAL.jpg" alt="Logo" width="200">
   </a>
 
-  <h3 align="center">LABORATORIO: ANÁLISIS Y OPERACIÓN DEL MANIPULADOR MOTOMAN MH6</h3>
+  <h3 align="center">PROYECTO DE ROBÓTICA: TELEOPERACIÓN DEL ROBOT PHANTOM X PINCHER</h3>
 
   <p align="center">Robótica [2016770]
     <br />Andres Y. Romero D. · Luis E. Carmona A. · Miguel A. Parrado P.
@@ -13,4 +13,4 @@
 </div>
 
 
-### 1. CUADRO COMPARATIVO ENTRE LOS ROBOTS MOTOMAN MH6 Y ABB IRB140:
+### 1. CÁLCULO DE LA CINEMÁTICA DIRECTA:
