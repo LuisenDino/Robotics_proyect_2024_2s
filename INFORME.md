@@ -23,7 +23,11 @@ El primer paso que se realizó, para poder desarrollar la cinemática directa de
 
 El marco de referencia "base" se pudo en el piso y el "TCP" se puso 15 mm antes del extremo del robot, en el punto de agarre óptimo de la pinza.
 
-Posterior a ello
+Posterior a ello, se realizó el diagrama del robót para poder dibujar los sistemas de referencia de cada eslabón siguiendo las reglas del algoritmo de Denavit-Hartenberg. Este proceso se ilustra en la siguiente figura:
+
+<p align="center">
+  <img src="Figuras/diagramaDH_pincher.png" alt="Descripción" width="400" height="400">
+</p>
 
 
 
