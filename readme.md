@@ -122,6 +122,53 @@ El resultado de la ejecución del anterior código, se muestra en la imagen sigu
 
 Como se puede observar en la imagen anterior, tanto la posición como la orientación obtenidos con las funciones del ToolBox de Peter Corke, coinciden con los resultados de nuestro propio algoritmo, comprobando la validez de nuestro proceso.
 
+Finalmente se convierte la función a lenguaje python para poder ser utilizada con ROS:
+
+```python
+def calc_robot_pose(q):
+
+        """
+        Calcula la cinemática directa de un robot pincher dado un vector de valores articulares [q1 q2 q3 q4].
+        Args:
+            q (list): Lista de 4 elementos que representan los ángulos de cada articulación del robot.
+        Returns:
+            list: Matriz de transformación homogenea que representa la pose del robot.
+        """
+
+    A = [[math.cos(math.radians(q[0])), 0, -math.sin(math.radians(q[0])), 0],
+         [math.sin(math.radians(q[0])), 0, math.cos(math.radians(q[0])), 0],
+         [0, -1, 0, 137],
+         [0, 0, 0, 1]]
+    
+    B = [[math.sin(math.radians(q[1])), math.cos(math.radians(q[1])), 0, 105*math.sin(math.radians(q[1]))],
+         [-math.cos(math.radians(q[1])), math.sin(math.radians(q[1])), 0, -105*math.cos(math.radians(q[1]))],
+         [0, 0, 1, 0],
+         [0, 0, 0, 1]]
+    
+    C = [[math.cos(math.radians(q[2])), -math.sin(math.radians(q[2])), 0, 105*math.cos(math.radians(q[2]))],
+         [math.sin(math.radians(q[2])), math.cos(math.radians(q[2])), 0, 105*math.sin(math.radians(q[2]))],
+         [0, 0, 1, 0],
+         [0, 0, 0, 1]]
+    
+    D = [[math.cos(math.radians(q[3])), -math.sin(math.radians(q[3])), 0, 95*math.cos(math.radians(q[3]))],
+         [math.sin(math.radians(q[3])), math.cos(math.radians(q[3])), 0, 95*math.sin(math.radians(q[3]))],
+         [0, 0, 1, 0],
+         [0, 0, 0, 1]]
+    
+    E = [[0, 0, 1, 0],
+         [-1, 0, 0, 0],
+         [0, -1, 0, 0],
+         [0, 0, 0, 1]]
+    
+    # Convertir las listas en matrices de NumPy para la multiplicación
+    A, B, C, D, E = np.array(A), np.array(B), np.array(C), np.array(D), np.array(E)
+    
+    # Multiplicación de las cinco matrices
+    resultado = A @ B @ C @ D @ E
+    
+    return resultado
+```
+
 ### 2. CINEMÁTICA INVERSA:
 
 Para el cálculo de cinemática inversa, se considera la pose final del robot con 4 argumantos: [x0, y0, z0, ang0]. En donde x0, y0 y z0 son las coordenadas segun el marco de referencia del mundo (ubicado en la base del robot, alineado con la articulación 1) y ang0 el ángulo de la muñeca, perpendicular según el plano XY.
