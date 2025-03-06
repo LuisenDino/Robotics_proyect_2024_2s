@@ -35,6 +35,45 @@ Observe que hay un sistema de referencia "noa" adicional a los exigidos por el a
   <img src="Figuras/parametrosDH.png" alt="Descripción" width="800" height="150">
 </p>
 
+```matlab
+function T = getDir(q)
+    
+    q = deg2rad(q);
+    
+    % Matriz A
+    A = [cos(q(1)), 0, -sin(q(1)), 0;
+         sin(q(1)), 0,  cos(q(1)), 0;
+         0,       -1,       0,   137;
+         0,        0,       0,     1];
+    
+    % Matriz B
+    B = [ sin(q(2)),  cos(q(2)), 0,  105*sin(q(2));
+         -cos(q(2)),  sin(q(2)), 0, -105*cos(q(2));
+          0,          0,        1,  0;
+          0,          0,        0,  1];
+    
+    % Matriz C
+    C = [cos(q(3)), -sin(q(3)), 0,  105*cos(q(3));
+         sin(q(3)),  cos(q(3)), 0,  105*sin(q(3));
+         0,         0,         1,  0;
+         0,         0,         0,  1];
+    
+    % Matriz D
+    D = [cos(q(4)), -sin(q(4)), 0,  95*cos(q(4));
+         sin(q(4)),  cos(q(4)), 0,  95*sin(q(4));
+         0,         0,         1,  0;
+         0,         0,         0,  1];
+    
+    % Matriz E
+    E = [0,  0,  1,  0;
+        -1,  0,  0,  0;
+         0, -1,  0,  0;
+         0,  0,  0,  1];
+    
+    T = A*B*C*D*E;
+end
+```
+
 ### 2. CINEMÁTICA INVERSA:
 
 
