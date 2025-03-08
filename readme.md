@@ -390,13 +390,9 @@ El espacio local, es quien recibe las instrucciones del espacio remoto y las tra
 
 * Movimiento Automático: El movimiento automático es una trayectoria posteriormente programada, que al momento de ser ejecutada no permite que el teleoperador retome el control del robot, hasta que se finalize el movimiento.
 
-### 5. DISCUCIÓN DEL CÓDIGO:
+### 5. TELEOPERACIÓN MANUAL VS OPERACIÓN AUTOMÁTICA:
 
 
 
-### 6. TELEOPERACIÓN MANUAL VS OPERACIÓN AUTOMÁTICA:
-
-
-
-### 7. VIDEOS:
+### 6. VIDEOS:
 
