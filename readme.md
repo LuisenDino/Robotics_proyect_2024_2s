@@ -393,6 +393,13 @@ El espacio local, es quien recibe las instrucciones del espacio remoto y las tra
 ### 5. TELEOPERACIÓN MANUAL VS OPERACIÓN AUTOMÁTICA:
 
 
+| Tipo de Operación | Manual | Automática |
+| :---: | ---       |
+| Movimiento | El movimiento es más brusco, pero es de mayor velocidad| El movimiento al seguir la trayectoria es suave, pero se produce de manera más lenta. |
+| Vigilancia | Se necesita que el operador esté atento a los movimientos que comande para el robot. | No necesita de vigilancia del operador al ejecutar la trayectoria.|
+| Características | Permite elegir entre movimiento lineal o articular cuando se desee. | Una vez ejecutada la trayectoria automática, esta no puede ser interrumpida. |
+| Parada | Se puede parar de leer los joysticks, y resumir el movimiento cuando se desee. | La trayectoria no puede ser detenida por los joysticks |
+|Facilidad de cambio | Solo se necesita de la interfaz para cambiar de tipo de movimiento, o para detenerlo | Si se requiere una nueva trayectoria, esta se tiene que subir al código |
 
 ### 6. VIDEO:
 
