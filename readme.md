@@ -394,5 +394,11 @@ El espacio local, es quien recibe las instrucciones del espacio remoto y las tra
 
 
 
-### 6. VIDEOS:
+### 6. VIDEO:
+
+A coninuaciónn se puede ver el video donde de presenta todo lo hecho en este proyecto.
+
+[![Ver video](https://github.com/LuisenDino/Robotics_proyect_2024_2s/blob/main/Figuras/video.png?raw=true)](https://drive.google.com/file/d/1rMWVK5hGqOc4CRKNmWZHFdlz5zEn3w6W/view?usp=sharing)
+
+### 7. RESUMEN EJECUTIVO
 
