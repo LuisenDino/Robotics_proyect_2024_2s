@@ -384,11 +384,11 @@ El espacio remoto es quien lee las señales de los joysticks y las traduce a men
 
 El espacio local, es quien recibe las instrucciones del espacio remoto y las traduce con ayuda de la libreria de DynamixelSDK al movimiento del PhantomX Pincher. Este espacio posee una cámara, y envia su informacion visual de regreso al espacio remoto, para permitir una retroalimentación visal con el teleoperador. El espacio local manda al robot tres tipos de movimientos.
 
-*Movimiento Articular: El espacio local recive movimientos en el espacio de las articulaciones, que se lleva a los motores del PhantomX. Este movimiento articular esta restringido para todos los motores, ya que ninguno de estos puede girar más de 150° en ambas direcciones.
+* Movimiento Articular: El espacio local recive movimientos en el espacio de las articulaciones, que se lleva a los motores del PhantomX. Este movimiento articular esta restringido para todos los motores, ya que ninguno de estos puede girar más de 150° en ambas direcciones.
 
-*Movimiento Lineal: Este movimiento es calculado desde el espacio remoto; y siendo que el robot tiene solamente 4 grados de libertad, además de no tener muñeca articulada, el movimiento lineal no mantiene la orientación del efector final, y solamente asegura mover el TCP en líneas rectas.
+* Movimiento Lineal: Este movimiento es calculado desde el espacio remoto; y siendo que el robot tiene solamente 4 grados de libertad, además de no tener muñeca articulada, el movimiento lineal no mantiene la orientación del efector final, y solamente asegura mover el TCP en líneas rectas.
 
-*Movimiento Automático: El movimiento automático es una trayectoria posteriormente programada, que al momento de ser ejecutada no permite que el teleoperador retome el control del robot, hasta que se finalize el movimiento.
+* Movimiento Automático: El movimiento automático es una trayectoria posteriormente programada, que al momento de ser ejecutada no permite que el teleoperador retome el control del robot, hasta que se finalize el movimiento.
 
 ### 5. DISCUCIÓN DEL CÓDIGO:
 
