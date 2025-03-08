@@ -369,14 +369,28 @@ En las siguientes imágenes, se desglozan los procesos de color azul, y se muest
 </p>
 
 
-### 4. PLANO DE PLANTA:
+### 4. PLANO DE PLANTA Y TELEOPERACIÓN:
+Para este plano, se consideró un modo reducido de el espacio de trabajo del Phantom X Pincher, en donde la articulación 2 configura al brazo de tal manera que queda paralelo con el suelo. En este espacio de trabajo reducido, se observa que el robot tiene un alcance efectivo de 305mm a 300° de la redonda.
 
 <p align="center">
   <img src="Figuras/plano_planta.png" alt="Descripción">
 </p>
 
+Teniendo en cuenta lo anterior, se desarrollaron los programas de teleopereaciones; tanto manual como automátática, que permiten que el robot se mueva sin problemas dentro de la región limitada por el plano de planta.
 
-### 5. CÓDIGO:
+Para la teleoperación, se configuran dos espacios de trabajo, uno local y otro remoto; ambos con ROS2. 
+
+El espacio remoto es quien lee las señales de los joysticks y las traduce a mensajes que posteriormente recibe e interpreta el espacio local. Por medio de una interfaz, este espacio puede cambiar el modo de movimiento entre automático y manual, de este ultimo pudiendo elegir entre movimiento articular y lineal. Además; este tambien recive la información visual de la cámara de el espacio local, para permitir confirmación visual al teleoperador.
+
+El espacio local, es quien recibe las instrucciones del espacio remoto y las traduce con ayuda de la libreria de DynamixelSDK al movimiento del PhantomX Pincher. Este espacio posee una cámara, y envia su informacion visual de regreso al espacio remoto, para permitir una retroalimentación visal con el teleoperador. El espacio local manda al robot tres tipos de movimientos.
+
+*Movimiento Articular: El espacio local recive movimientos en el espacio de las articulaciones, que se lleva a los motores del PhantomX. Este movimiento articular esta restringido para todos los motores, ya que ninguno de estos puede girar más de 150° en ambas direcciones.
+
+*Movimiento Lineal: Este movimiento es calculado desde el espacio remoto; y siendo que el robot tiene solamente 4 grados de libertad, además de no tener muñeca articulada, el movimiento lineal no mantiene la orientación del efector final, y solamente asegura mover el TCP en líneas rectas.
+
+*Movimiento Automático: El movimiento automático es una trayectoria posteriormente programada, que al momento de ser ejecutada no permite que el teleoperador retome el control del robot, hasta que se finalize el movimiento.
+
+### 5. DISCUCIÓN DEL CÓDIGO:
 
 
 
