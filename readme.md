@@ -343,36 +343,36 @@ Finalmente se convierte la función de cinemática inversa a lenguaje python par
 Se presenta el flujograma general del proyecto:
 
 <p align="center">
-  <img src="Figuras/flujo.png" alt="Descripción" width="400" height="600">
+  <img src="Figuras/flujo.png" alt="Descripción">
 </p>
 
 En las siguientes imágenes, se desglozan los procesos de color azul, y se muestra su flujograma interno
 
 <p align="center">
-  <img src="Figuras/flujo1.png" alt="Descripción" width="400" height="600">
+  <img src="Figuras/flujo1.png" alt="Descripción">
 </p>
 
 <p align="center">
-  <img src="Figuras/flujo2.png" alt="Descripción" width="400" height="600">
+  <img src="Figuras/flujo2.png" alt="Descripción">
 </p>
 
 <p align="center">
-  <img src="Figuras/flujo3.png" alt="Descripción" width="400" height="600">
+  <img src="Figuras/flujo3.png" alt="Descripción">
 </p>
 
 <p align="center">
-  <img src="Figuras/flujo4.png" alt="Descripción" width="400" height="600">
+  <img src="Figuras/flujo4.png" alt="Descripción">
 </p>
 
 <p align="center">
-  <img src="Figuras/flujo5.png" alt="Descripción" width="400" height="600">
+  <img src="Figuras/flujo5.png" alt="Descripción">
 </p>
 
 
 ### 4. PLANO DE PLANTA:
 
 <p align="center">
-  <img src="Figuras/plano_planta.png" alt="Descripción" width="400" height="600">
+  <img src="Figuras/plano_planta.png" alt="Descripción">
 </p>
 
 
