@@ -409,4 +409,4 @@ A coninuaciónn se puede ver el video donde de presenta todo lo hecho en este pr
 
 ### 7. RESUMEN EJECUTIVO
 
-https://drive.google.com/file/d/1BwbXOtMC8HIcr2_YnkDyKcJXXXE44VAs/view?usp=sharing
+https://drive.google.com/file/d/1c7iS0SRDxAU5sw7yoWAe50zLSzjvVnl_/view?usp=sharing
